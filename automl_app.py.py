@@ -158,29 +158,6 @@ if selected == 'EDA':
         basic_eda(df)
         chart(df)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #----------------------------------------------------------------------------------------------------------------------------#
 
 def linear_model(df):
@@ -281,10 +258,7 @@ def lasso_model(df):
          
          lasso_reg = Lasso(alpha= a)
          lasso_reg.fit(x_train,y_train)
-         
-         #train_score = lasso_reg.score(x_train,y_train)
-         #test_score = lasso_reg.score(x_test,y_test)
-         
+        
          y_pred_train= lasso_reg.predict(x_train)
          y_pred_test = lasso_reg.predict(x_test)
          
@@ -300,16 +274,13 @@ def lasso_model(df):
          
          st.subheader('Model Performance')
          st.markdown('**Training set**')
-         
-         #st.write('Training score:',train_score )
-         
-         
+        
          st.write('R2 score in train data :',r2score_train )
          st.write('mse in train data  :',mse_train )
 
          st.markdown('**Test set**')
          
-         #st.write('Test score  :', test_score )
+         
          st.write('R2 score in test data :',r2score_test )
          st.write('mse in test data  :',mse_test)
           
